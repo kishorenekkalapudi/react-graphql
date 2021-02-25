@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import dessertsQuery from "./dessert";
+import dessertsQuery from "./dessertgl";
 import { useState } from "react";
 
 export const addDessertMutation = gql`
@@ -72,9 +72,10 @@ function AddDessert() {
           }}
         >
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <div className="mt3">
+            <div className="mt3 ">
               <label className="db fw4 lh-copy f6">Dessert</label>
               <input
+                data-testid="dessert"
                 className="pa2 input-reset ba bg-transparent w-100 measure"
                 type="text"
                 value={dessert}
@@ -86,6 +87,7 @@ function AddDessert() {
             <div className="mt3">
               <label className="db fw4 lh-copy f6">Fat</label>
               <input
+                data-testid="fat"
                 className="pa2 input-reset ba bg-transparent w-100 measure"
                 type="text"
                 value={fat || ""}
@@ -97,6 +99,7 @@ function AddDessert() {
             <div className="mt3">
               <label className="db fw4 lh-copy f6">Calories</label>
               <input
+                data-testid="calories"
                 className="pa2 input-reset ba bg-transparent w-100 measure"
                 type="text"
                 value={calories || ""}
@@ -109,6 +112,7 @@ function AddDessert() {
             <div className="mt3">
               <label className="db fw4 lh-copy f6">Protein</label>
               <input
+                data-testid="protein"
                 className="pa2 input-reset ba bg-transparent w-100 measure"
                 type="text"
                 value={protein || ""}
@@ -120,6 +124,7 @@ function AddDessert() {
             <div className="mt3">
               <label className="db fw4 lh-copy f6">Carb</label>
               <input
+                data-testid="carb"
                 className="pa2 input-reset ba bg-transparent w-100 measure"
                 type="text"
                 value={carb || ""}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Dessert from "./desserts";
 import AddDessert from "./newDessert";
 import reportWebVitals from "./reportWebVitals";
 import ApolloClient from "apollo-boost";
@@ -14,10 +14,11 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <div className="cf">
-      <div className="fl w-50  tc">
-        <App />
+      <div className="fl w-50 tc">
+        <Dessert />
       </div>
-      <div className="fl w-50  tc">
+      <div className="fl w-50 tc">
+        Add Dessert
         <AddDessert />
       </div>
     </div>
