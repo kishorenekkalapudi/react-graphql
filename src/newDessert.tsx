@@ -3,6 +3,13 @@ import { Mutation } from "react-apollo";
 import dessertsQuery from "./dessertgl";
 import { useState } from "react";
 
+interface createDessert {
+  fat: number;
+  calories: number;
+  carb: number;
+  protein: number;
+  dessert: string;
+}
 export const addDessertMutation = gql`
   mutation createDessert(
     $dessert: String!
@@ -43,7 +50,7 @@ function AddDessert() {
   };
 
   return (
-    <Mutation<any, Record<string, any>>
+    <Mutation<createDessert>
       mutation={addDessertMutation}
       refetchQueries={[
         {

@@ -2,7 +2,6 @@ import { render, screen, fireEvent, act } from "@testing-library/react";
 import NewDessert, { addDessertMutation } from "./newDessert";
 
 import { MockedProvider } from "@apollo/react-testing";
-import dessertsQuery from "./dessertgl";
 
 // The component AND the query need to be exported
 describe("dessert page", () => {

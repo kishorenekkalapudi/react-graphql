@@ -4,6 +4,21 @@ import { Query } from "react-apollo";
 import dessertsQuery from "./dessertgl";
 import { Mutation } from "react-apollo";
 
+interface nutritionInfo {
+  fat: number;
+  calories: number;
+  carb: number;
+  protein: number;
+}
+
+interface Dessert {
+  dessert: string;
+  nutritionInfo: nutritionInfo;
+}
+interface Desserts {
+  Desserts: Dessert[];
+}
+
 export const deleteDessert = gql`
   mutation deleteDessert($dessert: String) {
     deleteDessert(dessert: $dessert) {
@@ -11,17 +26,18 @@ export const deleteDessert = gql`
     }
   }
 `;
-const Dessert = () => {
+
+const NutritionList = () => {
   const [sort, setSort] = useState("");
   return (
     <div className="Appfl w-100 pa2">
       Nutrition List
-      <Query<any, Record<string, any>> query={dessertsQuery}>
+      <Query<Desserts, Dessert> query={dessertsQuery}>
         {({ data, loading, error }) => {
           if (loading) return <p>Loading…</p>;
           if (error) return <p>Something went wrong</p>;
           if (sort)
-            data.Desserts.sort((a: any, b: any) => {
+            data?.Desserts.sort((a: any, b: any) => {
               console.log(b.nutritionInfo);
               console.log(sort);
 
@@ -75,7 +91,7 @@ const Dessert = () => {
                     </tr>
                   </thead>
                   <tbody className="lh-copy">
-                    {data.Desserts.map((e: any) => {
+                    {data?.Desserts.map((e: Dessert) => {
                       return (
                         <tr key={e.dessert}>
                           <td className="pv3 pr3 bb b--black-20">
@@ -138,4 +154,4 @@ const Dessert = () => {
   );
 };
 
-export default Dessert;
+export default NutritionList;

@@ -1,21 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Dessert from "./desserts";
+import NutritionList from "./nutritionList";
 import AddDessert from "./newDessert";
 import reportWebVitals from "./reportWebVitals";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 const client = new ApolloClient({
-  uri: "http://localhost:3000/graphql?",
+  uri: "http://localhost:3001/graphql?",
 });
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <div className="cf">
       <div className="fl w-50 tc">
-        <Dessert />
+        <NutritionList />
       </div>
       <div className="fl w-50 tc">
         Add Dessert

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Dessert from "./desserts";
+import NutritionList from "./nutritionList";
 
 import { MockedProvider } from "@apollo/react-testing";
 import dessertsQuery from "./dessertgl";
@@ -38,7 +38,7 @@ describe("dessert page", () => {
     };
     render(
       <MockedProvider mocks={[mocks]} addTypename={false}>
-        <Dessert />
+        <NutritionList />
       </MockedProvider>
     );
 
