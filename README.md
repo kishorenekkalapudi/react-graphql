@@ -9,20 +9,21 @@ In the project directory, you can run:
 ### `yarn add`
 
 To install dependences
-
+```
 yarn add or npm install
-
+```
 ### `yarn start`
 
 To start Server
-
+```
 yarn start or npm start
-
+```
 ### `yarn test`
 
 To run test
+```
 yarn test or npm test
-
+```
 Start grapql server from
 https://github.com/kishorenekkalapudi/apollo-express-graphql
 
