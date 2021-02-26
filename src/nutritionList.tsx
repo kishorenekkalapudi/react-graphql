@@ -32,7 +32,7 @@ const NutritionList = () => {
   return (
     <div className="Appfl w-100 pa2">
       Nutrition List
-      <Query<Desserts, Dessert> query={dessertsQuery}>
+      <Query<Desserts> query={dessertsQuery}>
         {({ data, loading, error }) => {
           if (loading) return <p>Loading…</p>;
           if (error) return <p>Something went wrong</p>;

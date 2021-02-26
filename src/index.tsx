@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import NutritionList from "./nutritionList";
 import AddDessert from "./newDessert";
 import reportWebVitals from "./reportWebVitals";
